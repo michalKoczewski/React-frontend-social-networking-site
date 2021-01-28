@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-import SignUp from './components/SignUp';
+import SignUp from './components/signUp';
 import Posts from './components/Posts';
 import PostDetails from './components/PostDetails';
 
@@ -18,7 +18,7 @@ function App() {
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/" activeClassName="active">Logout</Link>
+                                    <Link className="nav-link" to="/" activeClassName="active">Sign in</Link>
                                 </li>
                             </ul>
                         </div>
