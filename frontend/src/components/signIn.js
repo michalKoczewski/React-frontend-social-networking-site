@@ -22,7 +22,7 @@ class SignIn extends React.Component {
                 </div>
             </div>  
         )
-    }
+    }    
 }
 
 export default SignIn;
