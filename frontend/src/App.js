@@ -31,7 +31,7 @@ function App() {
                 <main>
                     <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route path="/">
+                        <Route path="/" exact>
                             <Posts />
                         </Route>
                         <Route path="/login">
@@ -46,7 +46,7 @@ function App() {
                     </Switch>
                     </div>
                 </main>
-                <footer className="py-1 px-4 fixed-bottom bg-dark text-light text-end">
+                <footer className="py-1 px-4 sticky-bottom bg-dark text-light text-end">
                     &copy; Kuba Posadzy, Michał Koczewski 2021
                 </footer>
         </BrowserRouter>

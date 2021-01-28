@@ -7,8 +7,8 @@ import { listPosts } from '../actions/postsActions';
 
 export default function Posts() { 
     const dispatch = useDispatch();
-    const posts = useSelector( state => state.posts);
-    const {loading, error, postList} = posts;
+    const postList = useSelector( state => state.postList);
+    const {loading, error, posts} = postList;
     useEffect(() => {
         dispatch(listPosts());
     }, [dispatch]);
@@ -24,9 +24,7 @@ export default function Posts() {
                         <div className="bg-danger">{error}</div>
                     ) : (
                         <div>
-                            {postList && postList.map(posts => (
-                                <Post key={posts._id} post={posts} />
-                            ))}
+                            {[posts].map(post => (<Post key={post._id} post={post} />))}
                         </div>
                     )}
                 </div>
