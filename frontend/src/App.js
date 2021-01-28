@@ -8,7 +8,7 @@ import PostDetails from './components/PostDetails';
 function App() {
     return (
         <BrowserRouter>
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark p-1">
+                <nav class="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
                     <div class="container">
                         <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto">
