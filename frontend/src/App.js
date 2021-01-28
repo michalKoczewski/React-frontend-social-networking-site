@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import SignUp from './components/signUp';
+import SignIn from './components/signIn';
 import Posts from './components/Posts';
 import PostDetails from './components/PostDetails';
 
@@ -18,7 +19,12 @@ function App() {
                             </ul>
                             <ul class="navbar-nav">
                                 <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/" activeClassName="active">Sign in</Link>
+                                    <Link className="nav-link" to="/" activeClassName="active">Sign up</Link>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav">
+                                <li class="nav-item px-1">
+                                    <Link className="nav-link" to="/SignIn" activeClassName="active">Sign in</Link>
                                 </li>
                             </ul>
                         </div>
@@ -35,6 +41,9 @@ function App() {
                         </Route>
                         <Route path="/posts/:id">
                             <PostDetails />
+                        </Route>
+                        <Route path="/SignIn">
+                            <SignIn/>
                         </Route>
                     </Switch>
                     </div>
