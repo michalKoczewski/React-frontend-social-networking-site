@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import SignUp from './components/signUp';
 import SignIn from './components/signIn';
 import Posts from './components/Posts';
@@ -9,20 +9,20 @@ import PostDetails from './components/PostDetails';
 function App() {
     return (
         <BrowserRouter>
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
-                    <div class="container">
-                        <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto">
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/" activeClassName="active">Home Page</Link>
+                <nav className="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
+                    <div className="container">
+                        <div className="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto">
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/">Home Page</NavLink>
                                 </li>
                             </ul>
-                            <ul class="navbar-nav">
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/login" activeClassName="active">Sign in</Link>
+                            <ul className="navbar-nav">
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/login">Sign in</NavLink>
                                 </li>
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/register" activeClassName="active">Register</Link>
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -31,7 +31,7 @@ function App() {
                 <main>
                     <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route exact path="/">
+                        <Route path="/">
                             <Posts />
                         </Route>
                         <Route path="/login">
