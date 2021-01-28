@@ -3,7 +3,9 @@ import React from 'react';
 class SignUp extends React.Component {
     render() {
         return(
-            <div></div>   
+            <div>
+                <h1>Żegnam</h1>
+            </div>   
         )
     }
 }
