@@ -42,9 +42,6 @@ function App() {
                             <Route path="/" exact>
                                 <Posts />
                             </Route>
-                            <Route path="/login">
-                                <SignIn />
-                            </Route>
                             <Route path="/signout">
                                 <SignOut />
                             </Route>
