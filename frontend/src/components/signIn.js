@@ -18,6 +18,8 @@ export function SignIn() {
         axios.post('http://localhost:8000/users/signIn', user)
         .then(res => {
             console.log(res);
+            localStorage.setItem("jwt", res.data.token);
+            console.log(res.data.token);
         })
         .catch(err => {
             console.error(err);
