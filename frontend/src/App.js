@@ -4,6 +4,7 @@ import SignUp from './components/signUp';
 import SignIn from './components/signIn';
 import Posts from './components/Posts';
 import PostDetails from './components/PostDetails';
+import UserDetails from './components/UserDetails';
 
 
 function App() {
@@ -11,18 +12,21 @@ function App() {
         <BrowserRouter>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
                     <div className="container">
-                        <div className="collapse navbar-collapse fs-5">
+                        <div className="collapse navbar-collapse fs-5" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" activeClassName="active" to="/">Home Page</NavLink>
+                                    <NavLink className="nav-link" to="/">Home Page</NavLink>
                                 </li>
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" activeClassName="active" to="/login">Sign in</NavLink>
+                                    <NavLink className="nav-link" to="/userDetails">User Details</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
+                                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                                </li>
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -31,7 +35,7 @@ function App() {
                 <main>
                     <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route exact path="/">
+                        <Route path="/" exact>
                             <Posts />
                         </Route>
                         <Route path="/login">
@@ -42,6 +46,9 @@ function App() {
                         </Route>
                         <Route path="/posts/:id">
                             <PostDetails />
+                        </Route>
+                        <Route path="userDetails">
+                            <UserDetails/>
                         </Route>
                     </Switch>
                     </div>
