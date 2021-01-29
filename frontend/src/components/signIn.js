@@ -21,6 +21,7 @@ export function SignIn() {
             console.log(res);
             localStorage.setItem("jwt", res.data.token);
             console.log(res.data.token);
+            
         })
         .catch(err => {
             console.error(err);
