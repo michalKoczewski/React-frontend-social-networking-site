@@ -5,6 +5,7 @@ import SignIn from './components/signIn';
 import SignOut from './components/signOut';
 import Posts from './components/Posts';
 import PostDetails from './components/PostDetails';
+import PostAdd from './components/PostAdd';
 import UserDetails from './components/UserDetails';
 
 
@@ -50,8 +51,11 @@ function App() {
                             <Route path="/posts/:id">
                                 <PostDetails />
                             </Route>
-                            <Route path="userDetails">
+                            <Route path="/userDetails">
                                 <UserDetails/>
+                            </Route>
+                            <Route path="/postAdd">
+                                <PostAdd />
                             </Route>
                         </Switch>
                         </div>

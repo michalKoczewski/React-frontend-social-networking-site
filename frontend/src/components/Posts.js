@@ -13,15 +13,30 @@ export default function Posts() {
         fetchData();
     }, []);
 
-    return (      
-        <div className="container-fluid">
-            <div className="row mt-3">
-                <div className="col-3"></div>
-                <div className="col-6">
-                    {posts.info.map(post => (<Post key={post._id} post={post} />))}
-                </div>
-                <div className="col-3"></div>
-            </div>   
-        </div>
-    )
+    if(localStorage.getItem('jwt')){
+        return (      
+            <div className="container-fluid">
+                <div className="row mt-3">
+                    <div className="col-3"><a href="/postAdd" className="btn btn-light">Dodaj post</a></div>
+                    <div className="col-6">
+                        {posts.info.map(post => (<Post key={post._id} post={post} />))}
+                    </div>
+                    <div className="col-3"></div>
+                </div>   
+            </div>
+        )
+    }
+    else {
+        return (      
+            <div className="container-fluid">
+                <div className="row mt-3">
+                    <div className="col-3"></div>
+                    <div className="col-6">
+                        {posts.info.map(post => (<Post key={post._id} post={post} />))}
+                    </div>
+                    <div className="col-3"></div>
+                </div>   
+            </div>
+        )
+    }
 }
