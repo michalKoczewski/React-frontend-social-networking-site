@@ -15,18 +15,18 @@ function App() {
                         <div className="collapse navbar-collapse fs-5" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/">Home Page</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/">Home Page</NavLink>
                                 </li>
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/userDetails">User Details</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/userDetails">User Details</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/login">Login</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/login">Login</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
                                 </li>
                             </ul>
                         </div>
