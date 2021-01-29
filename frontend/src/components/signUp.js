@@ -33,12 +33,12 @@ export function SignUp(props) {
                         <div className="mx-4">
                             <label htmlFor="username" className="form-label"> Username </label> <br/>
                             <input id="username" type="text"  className="form-control" aria-describedby="userHelp" {...bindUserName}/> <br/>
-                            <div id="userHelp" class="form-text mb-4">This wil be your username choose wisely!</div>
+                            <div id="userHelp" className="form-text mb-4">This wil be your username choose wisely!</div>
                         </div>
                         <div className="mx-4">
                             <label htmlFor="password" className="form-label"> Password </label> <br/>
                             <input id="password" type="password" className="form-control" aria-describedby="passwordHelp" {...bindUserPasswd}/> <br/>
-                            <div id="passwordHelp" class="form-text">This wil be your password choose wisely!</div>
+                            <div id="passwordHelp" className="form-text">This wil be your password choose wisely!</div>
                         </div>
                         <input type="submit" className="btn btn-secondary mx-3 mt-5 mb-4" value="Register!"/>                        
                     </form>

@@ -17,9 +17,14 @@ export default function Posts() {
         return (      
             <div className="container-fluid">
                 <div className="row mt-3">
-                    <div className="col-4">
-                        <a href="/postAdd" className="btn btn-light">Dodaj post</a>
+                    <div className="col-4"></div>
+                    <div className="col-4 text-center d-grid gap-2">
+                        <a href="/postAdd" className="btn btn-warning btn-block fw-light text-uppercase">Dodaj post</a>
                     </div>
+                    <div className="col-4"></div>
+                </div>
+                <div className="row mt-3">
+                    <div className="col-4"></div>
                     <div className="col-4">
                         {posts.info.map(post => (<Post key={post._id} post={post} />))}
                     </div>
@@ -31,7 +36,7 @@ export default function Posts() {
     else {
         return (      
             <div className="container-fluid">
-                <div className="row mt-3">
+                <div className="row mt-3 pb-5">
                     <div className="col-4"></div>
                     <div className="col-4">
                         {posts.info.map(post => (<Post key={post._id} post={post} />))}
