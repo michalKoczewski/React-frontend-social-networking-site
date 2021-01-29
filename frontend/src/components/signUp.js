@@ -1,34 +1,53 @@
 import React from 'react';
+import { useInput } from '../hooks/useInput';
+import axios from 'axios';
 
-class SignUp extends React.Component {
-    render() {
-        return(   
-            <div className="d-flex justify-content-center m-4">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title m-4">Register</h5>
-                        <form>
-                            <div className="form-group m-4">
-                                <label for="userNameInput"> Username </label> <br/>
-                                <input type="text" className="from-control my-2" id="userNameInput"/> <br/>
-                                <small id="userNameHelp" className="form-text text-muted">
-                                    This wil be your username choose wisely!
-                                </small>
-                            </div>
-                            <div className="form-group mx-4">
-                                <label for="userPasswdInput"> Password </label> <br/>
-                                <input type="text" className="from-control my-2" id="userPasswdInput"/> <br/>
-                                <small id="userPasswdHelp" className="form-text text-muted">
-                                    This wil be your password choose wisely!
-                                </small>
-                            </div>
-                            <button type="submit" className="btn btn-secondary mx-4 my-5">Register!</button>
-                        </form>
-                    </div>
-                </div>
-            </div>   
-        )
+export function SignUp(props) {
+    const { value:userName, bind:bindUserName } = useInput('');
+    const { value:userPasswd, bind:bindUserPasswd } = useInput('');
+
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        console.log(`Subbmitint username ${userName} password ${userPasswd}`);
+
+        const user = {
+            userName,
+            userPasswd
+        }
+
+        axios.post('http://localhost:8000/users/signUp', user)
+        .then(()=> console.log('User Created'))
+        .catch(err => {
+            console.error(err);
+        })
     }
+
+    return(   
+        <div className="d-flex justify-content-center m-4">
+            <div className="card">
+                <div className="card-body">
+                    <h5 className="card-title m-4">Register</h5>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group m-4">
+                            <label> Username </label> <br/>
+                            <input type="text" className="from-control my-2" {...bindUserName}/> <br/>
+                            <small className="form-text text-muted">
+                                This wil be your username choose wisely!
+                            </small>
+                        </div>
+                        <div className="form-group mx-4">
+                            <label> Password </label> <br/>
+                            <input type="password" className="from-control my-2" {...bindUserPasswd}/> <br/>
+                            <small className="form-text text-muted">
+                                This wil be your password choose wisely!
+                            </small>
+                        </div>
+                        <input type="submit" className="btn btn-secondary mx-4 my-5" value="Register!"/>
+                    </form>
+                </div>
+            </div>
+        </div>   
+    )    
 }
 
 export default SignUp;
