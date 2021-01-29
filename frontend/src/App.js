@@ -11,18 +11,18 @@ function App() {
         <BrowserRouter>
                 <nav className="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
                     <div className="container">
-                        <div className="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+                        <div className="collapse navbar-collapse fs-5">
                             <ul className="navbar-nav me-auto">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/">Home Page</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/">Home Page</NavLink>
                                 </li>
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/login">Sign in</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/login">Sign in</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/register">Register</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/register">Register</NavLink>
                                 </li>
                             </ul>
                         </div>
