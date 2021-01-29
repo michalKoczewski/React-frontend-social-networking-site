@@ -34,7 +34,7 @@ export function UserDetails() {
             userPasswd
         }
 
-        axios.patch(`http://localhost:8000/users/${userId}`, user)
+        axios.patch('http://localhost:8000/users/' + userId , user)
         .then(res => console.log(res))
         .catch(err => {
             console.error(err);
