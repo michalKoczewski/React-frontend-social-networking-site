@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import SignUp from './components/signUp';
 import SignIn from './components/signIn';
 import Posts from './components/Posts';
@@ -9,22 +9,20 @@ import PostDetails from './components/PostDetails';
 function App() {
     return (
         <BrowserRouter>
-                <nav class="navbar navbar-expand-md navbar-dark bg-dark p-1">
-                    <div class="container">
-                        <div class="collapse navbar-collapse fs-5" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto">
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/posts" activeClassName="active">Home Page</Link>
+                <nav className="navbar navbar-expand-md navbar-dark bg-dark p-1 sticky-top">
+                    <div className="container">
+                        <div className="collapse navbar-collapse fs-5" id="navbarSupportedContent">
+                            <ul className="navbar-nav me-auto">
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/">Home Page</NavLink>
                                 </li>
                             </ul>
-                            <ul class="navbar-nav">
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/" activeClassName="active">Sign up</Link>
+                            <ul className="navbar-nav">
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/login">Sign in</NavLink>
                                 </li>
-                            </ul>
-                            <ul class="navbar-nav">
-                                <li class="nav-item px-1">
-                                    <Link className="nav-link" to="/SignIn" activeClassName="active">Sign in</Link>
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/register">Register</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -33,22 +31,22 @@ function App() {
                 <main>
                     <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route exact path="/">
-                            <SignUp />
-                        </Route>
-                        <Route path="/posts">
+                        <Route path="/" exact>
                             <Posts />
+                        </Route>
+                        <Route path="/login">
+                            <SignIn />
+                        </Route>
+                        <Route path="/register">
+                            <SignUp />
                         </Route>
                         <Route path="/posts/:id">
                             <PostDetails />
                         </Route>
-                        <Route path="/SignIn">
-                            <SignIn/>
-                        </Route>
                     </Switch>
                     </div>
                 </main>
-                <footer className="py-1 px-4 fixed-bottom bg-dark text-light text-end">
+                <footer className="py-1 px-4 sticky-bottom bg-dark text-light text-end">
                     &copy; Kuba Posadzy, Michał Koczewski 2021
                 </footer>
         </BrowserRouter>
