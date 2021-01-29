@@ -3,9 +3,9 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 
-export default function Posts() { 
-    let { id } = useParams();
+export default function PostDetails() { 
 
+    let { id } = useParams();
     const [post, setPost] = useState({post: {}});
     useEffect(() => {
         async function fetchData(){
