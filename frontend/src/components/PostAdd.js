@@ -41,7 +41,7 @@ export function PostAdd(props) {
                         </div>
                         <div className="mx-4">
                             <label htmlFor="file" className="form-label"> Image </label> <br/>
-                            <input type="text" className="form-control" aria-describedby="imageHelp" {...bindImg}/> <br/>
+                            <input type="file" className="form-control" aria-describedby="imageHelp" {...bindImg}/> <br/>
                             <div id="imageHelp" class="form-text mb-4">Please copy path to your file.</div>
                         </div>
                         <input type="submit" className="btn btn-secondary mx-4 my-5" value="Publish"/>                        
