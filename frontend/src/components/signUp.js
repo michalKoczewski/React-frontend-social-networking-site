@@ -16,10 +16,12 @@ export function SignUp(props) {
         }
 
         axios.post('http://localhost:8000/users/signUp', user)
-        .then(()=> console.log('User Created'))
+        .then(res => sessionStorage.setItem("token", res.data.token))
         .catch(err => {
             console.error(err);
         })
+
+        
     }
 
     return(   
@@ -42,7 +44,7 @@ export function SignUp(props) {
                                 This wil be your password choose wisely!
                             </small>
                         </div>
-                        <input type="submit" className="btn btn-secondary mx-4 my-5" value="Register!"/>
+                        <input type="submit" className="btn btn-secondary mx-4 my-5" value="Register!"/>                        
                     </form>
                 </div>
             </div>

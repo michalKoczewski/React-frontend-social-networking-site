@@ -8,7 +8,7 @@ export function SignIn() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(`Subbmitint username ${userName} password ${userPasswd}`);
+        console.log(`Subbmiting username ${userName} password ${userPasswd}`);
 
         const user = {
             userName,
@@ -16,7 +16,9 @@ export function SignIn() {
         }
 
         axios.post('http://localhost:8000/users/signIn', user)
-        .then(()=> console.log('User logged in'))
+        .then(res => {
+            console.log(res);
+        })
         .catch(err => {
             console.error(err);
         })
@@ -40,7 +42,7 @@ export function SignIn() {
                             <small className="form-text text-muted">                                
                             </small>
                         </div>
-                        <input type="submit" className="btn btn-secondary mx-4 my-5" value="Register!"/>
+                        <input type="submit" className="btn btn-secondary mx-4 my-5" value="Sign In!"/>
                     </form>
                 </div>
             </div>

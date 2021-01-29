@@ -4,6 +4,7 @@ import SignUp from './components/signUp';
 import SignIn from './components/signIn';
 import Posts from './components/Posts';
 import PostDetails from './components/PostDetails';
+import UserDetails from './components/UserDetails';
 
 
 function App() {
@@ -18,6 +19,9 @@ function App() {
                                 </li>
                             </ul>
                             <ul className="navbar-nav">
+                                <li className="nav-item px-1">
+                                    <NavLink className="nav-link" to="/userDetails">User Details</NavLink>
+                                </li>
                                 <li className="nav-item px-1">
                                     <NavLink className="nav-link" to="/login">Login</NavLink>
                                 </li>
@@ -42,6 +46,9 @@ function App() {
                         </Route>
                         <Route path="/posts/:id">
                             <PostDetails />
+                        </Route>
+                        <Route path="userDetails">
+                            <UserDetails/>
                         </Route>
                     </Switch>
                     </div>
