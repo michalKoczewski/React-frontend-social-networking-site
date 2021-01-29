@@ -23,7 +23,7 @@ export function SignIn() {
             token = res.data.token;
             console.log(token);
             decoded = jwt.verify(token, 'zaq1@WSX');
-            console.log(decoded.user.id);
+            console.log(decoded);
         })
         .catch(err => {
             console.error(err);
