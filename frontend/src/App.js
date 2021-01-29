@@ -20,7 +20,7 @@ function App() {
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" activeClassName="active" to="/userDetails">User Details</NavLink>
+                                    <NavLink className="nav-link" activeClassName="active" to="/userDetails">Account</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
                                     <NavLink className="nav-link" activeClassName="active" to="/login">Login</NavLink>
