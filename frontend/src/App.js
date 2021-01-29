@@ -37,7 +37,7 @@ function App() {
                         </div>
                     </nav>
                     <main>
-                        <div style={{width: '100%', height: '100%'}}>
+                        <div style={{width: '100%', height: '100%'}} className="mb-4">
                         <Switch>
                             <Route path="/" exact>
                                 <Posts />
@@ -84,7 +84,7 @@ function App() {
                         </div>
                     </nav>
                     <main>
-                        <div style={{width: '100%', height: '100%'}}>
+                        <div style={{width: '100%', height: '100%'}} className="mb-4">
                         <Switch>
                             <Route path="/" exact>
                                 <SignIn />
@@ -95,7 +95,7 @@ function App() {
                         </Switch>
                         </div>
                     </main>
-                    <footer className="py-1  fixed-bottom bg-dark text-light text-end">
+                    <footer className="py-1 px-4 fixed-bottom bg-dark text-light text-end">
                         &copy; Kuba Posadzy, Michał Koczewski 2021
                     </footer>
             </BrowserRouter>
