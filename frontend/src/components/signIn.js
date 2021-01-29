@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInput } from '../hooks/useInput';
 import axios from 'axios';
-import { Redirect } from 'react-router';
 
 export function SignIn() {
     const { value:userName, bind:bindUserName } = useInput('');
@@ -9,7 +8,6 @@ export function SignIn() {
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(`Subbmiting username ${userName} password ${userPasswd}`);
 
         const user = {
             userName,
@@ -18,9 +16,8 @@ export function SignIn() {
 
         axios.post('http://localhost:8000/users/signIn', user)
         .then(res => {
-            console.log(res);
             localStorage.setItem("jwt", res.data.token);
-            console.log(res.data.token);
+            window.location.reload(false);
             
         })
         .catch(err => {

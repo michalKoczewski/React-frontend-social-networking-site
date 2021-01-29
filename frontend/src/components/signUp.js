@@ -1,8 +1,10 @@
 import React from 'react';
 import { useInput } from '../hooks/useInput';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 export function SignUp(props) {
+    const history = useHistory();
     const { value:userName, bind:bindUserName } = useInput('');
     const { value:userPasswd, bind:bindUserPasswd } = useInput('');
 
@@ -21,7 +23,7 @@ export function SignUp(props) {
             console.error(err);
         })
 
-        
+        history.push('/');
     }
 
     return(   

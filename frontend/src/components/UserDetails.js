@@ -1,16 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useInput } from '../hooks/useInput';
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
+import { useHistory } from "react-router-dom";
 
 export function UserDetails() {
     const { value:userName, bind:bindUserName } = useInput('');
     const { value:userPasswd, bind:bindUserPasswd } = useInput('');
+    const history = useHistory();
     var token = '';
     var userId = '';
 
-    const handleDelete = () => {
-        axios.delete(`http://localhost:8000/users/${userId}`)
+    const handleDelete = () =>  {
+        token = jwt.verify(localStorage.getItem('jwt'), 'zaq1@WSX');
+        userId = token.user.id;
+        console.log(userId);
+        axios.delete('http://localhost:8000/users/'+userId);
+        localStorage.removeItem('jwt');  
+        history.push("/");
+        window.location.reload(false);
+
     }
 
     const handleSubmit = (evt) => {
@@ -55,7 +64,7 @@ export function UserDetails() {
                         </div>
                         <input type="submit" className="btn btn-warning mx-4 my-2" value="Edit account!"/>                        
                     </form>
-                    <button type="button" className="btn btn-danger mx-4 my-2"> Delete Account </button>
+                    <button type="button" className="btn btn-danger mx-4 my-2" onClick={handleDelete}> Delete Account </button>
                 </div>
             </div>
         </div>   

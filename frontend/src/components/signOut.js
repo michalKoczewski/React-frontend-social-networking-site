@@ -1,14 +1,13 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { useHistory } from "react-router-dom";
 
 export function SignOut() {
-    
-    localStorage.removeItem('jwt')        
+    const history = useHistory();
+    localStorage.removeItem('jwt');
+    window.location.reload(false);        
+    history.push('/');
 
-
-    return(   
-        <Redirect to="/" />        
-    )    
+    return(null)    
 }
 
 export default SignOut;
