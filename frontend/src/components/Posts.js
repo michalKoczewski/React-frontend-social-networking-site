@@ -11,7 +11,7 @@ export default function Posts() {
     const {loading, error, posts} = postList;
     useEffect(() => {
         dispatch(listPosts());
-    }, [dispatch]);
+    }, [dispatch]);    
 
     return (      
         <div className="container-fluid">

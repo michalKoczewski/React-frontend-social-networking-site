@@ -19,7 +19,7 @@ function App() {
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item px-1">
-                                    <NavLink className="nav-link" to="/login">Sign in</NavLink>
+                                    <NavLink className="nav-link" to="/login">Login</NavLink>
                                 </li>
                                 <li className="nav-item px-1">
                                     <NavLink className="nav-link" to="/register">Register</NavLink>
