@@ -1,10 +1,13 @@
 import React from 'react';
 import { useInput } from '../hooks/useInput';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 export function SignIn() {
     const { value:userName, bind:bindUserName } = useInput('');
     const { value:userPasswd, bind:bindUserPasswd } = useInput('');
+    var token = '';
+    var decoded = '';
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -17,7 +20,10 @@ export function SignIn() {
 
         axios.post('http://localhost:8000/users/signIn', user)
         .then(res => {
-            console.log(res);
+            token = res.data.token;
+            console.log(token);
+            decoded = jwt.verify(token, 'zaq1@WSX');
+            console.log(decoded.user.id);
         })
         .catch(err => {
             console.error(err);
