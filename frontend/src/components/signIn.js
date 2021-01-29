@@ -34,19 +34,19 @@ export function SignIn() {
                 <div className="card-body text-center">
                     <h5 className="card-title m-4">Login</h5>
                     <form onSubmit={handleSubmit} action="/">
-                        <div className="form-group">
+                        <div className="mx-4">
                             <label htmlFor="username" className="form-label"> Username </label> <br/>
                             <input type="text" id="username" className="form-control" {...bindUserName}/> <br/>
                             <small className="form-text text-muted">                                
                             </small>
                         </div>
-                        <div className="form-group">
+                        <div className="mx-4">
                             <label htmlFor="password" className="form-label"> Password </label> <br/>
                             <input type="password" id="password" className="form-control" {...bindUserPasswd}/> <br/>
                             <small className="form-text text-muted">                                
                             </small>
                         </div>
-                        <input type="submit" className="btn btn-secondary mx-3 my-3" value="Sign In!" />
+                        <input type="submit" className="btn btn-secondary mx-4 my-4" value="Sign In!" />
                     </form>
                 </div>
             </div>
