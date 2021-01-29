@@ -1,34 +1,28 @@
-
+import { render } from '@testing-library/react';
 import React from 'react';
 import { useInput } from '../hooks/useInput';
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
 
 export function UserDetails() {
     const { value:userName, bind:bindUserName } = useInput('');
     const { value:userPasswd, bind:bindUserPasswd } = useInput('');
-    var token = '';
-    var decoded = '';
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
-        console.log(`Subbmiting username ${userName} password ${userPasswd}`);
+        console.log(`Subbmitint username ${userName} password ${userPasswd}`);
 
         const user = {
             userName,
             userPasswd
         }
 
-        axios.post('http://localhost:8000/users/signIn', user)
-        .then(res => {
-            token = res.data.token;
-            console.log(token);
-            decoded = jwt.verify(token, 'zaq1@WSX');
-            console.log(decoded.user.id);
-        })
+        axios.post('http://localhost:8000/users/signUp', user)
+        .then(res => sessionStorage.setItem("token", res.data.token))
         .catch(err => {
             console.error(err);
         })
+
+        
     }
     return(
     <div className="d-flex justify-content-center m-4">

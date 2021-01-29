@@ -99,7 +99,7 @@ function App() {
                             <Route path="/posts/:id">
                                 <PostDetails />
                             </Route>
-                            <Route path="userDetails">
+                            <Route path="/userDetails">
                                 <UserDetails/>
                             </Route>
                         </Switch>

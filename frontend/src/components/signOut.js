@@ -1,12 +1,12 @@
 import React from 'react';
-import { Redirect } from 'react-router';
+import { Redirect } from 'react-router-dom';
 
 export function SignOut() {
-
-    localStorage.removeItem('jwt')
+    
+    localStorage.removeItem('jwt')        
 
     return(   
-        <Redirect to="/" />
+        <Redirect to="/" />        
     )    
 }
 
