@@ -31,7 +31,7 @@ function App() {
                 <main>
                     <div style={{width: '100%', height: '100%'}}>
                     <Switch>
-                        <Route path="/" exact>
+                        <Route exact path="/">
                             <Posts />
                         </Route>
                         <Route path="/login">
